@@ -1,24 +1,27 @@
 {
-    "name": "<%= project.name %>",
+    "name": "<%= projectname %>",
     "version": "0.0.0",
-    "description": "<%= project.description %>",
+    "description": "<%= projectdescription %>",
     "main": "index.js",
     "scripts": {
         "test": "node tests"
     },
     "repository": {
         "type": "git",
-        "url": "<%= project.repository %>"
+        "url": "<%= projectrepository %>"
     },
     "keywords": [
         "grunt"
     ],
-    "author": "<%= author.name %>",
+    "author": {
+        "name": "<%= username %>",
+        "email": "<%= useremail %>"
+    },
     "license": "MIT",
     "bugs": {
-        "url": "<%= project.repository %>/issues"
+        "url": "<%= projectrepository %>/issues"
     },
-    "homepage": "<%= project.repository %>",
+    "homepage": "<%= projectrepository %>",
     "dependencies": {},
     "devDependencies": {
         "coveralls": "^2.11.2",

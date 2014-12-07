@@ -1,8 +1,8 @@
 /**
- * <%= project.name %>
- * <%= project.repository %>
+ * <%= projectname %>
+ * <%= projectrepository %>
  *
- * Copyright (c) 2014 <%= author.name %>
+ * Copyright (c) 2014 <%= username %>
  * Licensed under the MIT license.
  *
  *

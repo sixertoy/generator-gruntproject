@@ -1,0 +1,16 @@
+---
+# project folders
+root:
+    - [CHANGELOG.md, Gruntfile.js, README.md, jasmine-node, .editorconfig, .gitignore, .gitattributes, .jshintrc, _package.json, _LICENSE-MIT, _.travis.yml]
+    - docs:
+        - src
+        - html
+        - [page.tpl]
+    - grunt:
+        - [aliases.yml, bump.js, jasmine_node.js, jshint.js, markdown.js]
+    - tests:
+        - fixtures
+        - expected
+        - lib
+        - [spec.tpl]
+    - bin:
