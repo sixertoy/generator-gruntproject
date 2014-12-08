@@ -137,7 +137,7 @@
                     name: 'travis_apikey',
                     message: 'Travis API key ?',
                     validate: function (value) {
-                        return lodash.isEmpty(value.trim()) ? 'Enter your Travis api key': true;
+                        return lodash.isEmpty(value.trim()) ? 'Enter your Travis api key' : true;
                     }
                 });
 
@@ -151,6 +151,11 @@
                         repository: values.projectrepository,
                         description: values.projectdescription
                     });
+                    if (values.travis) {
+                        this.config.set('travis', {
+                            apikey: values.travis_apikey
+                        });
+                    }
                     done();
                 }.bind(this));
 
