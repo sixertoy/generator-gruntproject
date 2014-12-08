@@ -26,6 +26,7 @@
         yaml = require('js-yaml'),
         assert = require('assert'),
         lodash = require('lodash'),
+        slugify = require('slugify'),
         generators = require('yeoman-generator');
 
     GruntProjectGenerator = generators.Base.extend({
@@ -39,33 +40,50 @@
 
             // place here private methods
             this.parseBones = function (name, values) {
-                var p, $this = this;
+                var used,
+                    src, // folder/file to be written
+                    basename, // file basename
+                    $this = this
                 if (!lodash.isNull(values)) {
-                    values.filter(function (value) {
-                        if (lodash.isString(value)) {
+                    values.filter(function (item) {
+                        if (lodash.isString(item)) {
                             return true;
-                        } else if (lodash.isArray(value)) {
-                            value.map(function (file) {
-                                p = path.join(name, file);
-                                if (file.indexOf('_') === 0) {
-                                    $this.fs.copyTpl(
-                                        $this.templatePath(p),
-                                        $this.destinationPath(path.join(name, file.slice(1))),
-                                        $this.config.getAll()
-                                    );
-                                } else {
-                                    $this.fs.copy(
-                                        $this.templatePath(p),
-                                        $this.destinationPath(p)
-                                    );
+                        } else if (lodash.isArray(item)) {
+
+                            item.map(function (file) {
+
+                                used = true;
+                                src = path.join(name, file);
+
+                                /*
+                                if ($this.config.get('conditionnals').hasOwnProperty(basename)) {
+                                    used = $this.config.get('conditionnals')[basename];
                                 }
+                                */
+
+                                if (used) {
+                                    if (file.indexOf('_') === 0) {
+                                        $this.fs.copyTpl(
+                                            $this.templatePath(src),
+                                            $this.destinationPath(path.join(name, file.slice(1))),
+                                            $this.config.getAll()
+                                        );
+                                    } else {
+                                        $this.fs.copy(
+                                            $this.templatePath(src),
+                                            $this.destinationPath(src)
+                                        );
+                                    }
+                                }
+
                             });
+
                             return false;
-                        } else if (lodash.isObject(value)) {
-                            Object.keys(value).map(function (key) {
-                                p = path.join(name, key);
-                                $this.mkdir(p);
-                                $this.parseBones(p, value[key]);
+                        } else if (lodash.isObject(item)) {
+                            Object.keys(item).map(function (key) {
+                                src = path.join(name, key);
+                                $this.mkdir(src);
+                                $this.parseBones(src, item[key]);
                             });
                         }
                     }).map(function (item) {
@@ -88,7 +106,7 @@
                     type: 'input',
                     name: 'projectname',
                     message: 'Project name',
-                    default: this.determineAppname()
+                    default: slugify(this.determineAppname())
                 });
 
                 prompts.push({
@@ -151,11 +169,14 @@
                         repository: values.projectrepository,
                         description: values.projectdescription
                     });
-                    if (values.travis) {
+                    if (values.use_travis) {
                         this.config.set('travis', {
                             apikey: values.travis_apikey
                         });
                     }
+                    this.config.set('conditionnals', {
+                        travis: values.use_travis
+                    });
                     done();
                 }.bind(this));
 
@@ -172,7 +193,7 @@
                 file = '../bones.yml',
                 bones = yaml.safeLoad(this.src.read(file, 'utf-8'));
             Q.delay(500, (function () {
-                // $this.parseBones('', bones['root']);
+                $this.parseBones('', bones['root']);
             }())).then(done);
         },
 

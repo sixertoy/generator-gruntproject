@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Documentation</title>
+    <title><%= project.name %> | Documentation</title>
     <style></style>
 </head>
 <body>
