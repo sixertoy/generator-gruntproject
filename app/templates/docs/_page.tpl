@@ -7,6 +7,6 @@
     <style></style>
 </head>
 <body>
-    <%= content %>
+    <%= ldim %> content <%= rdim %>
 </body>
 </html>

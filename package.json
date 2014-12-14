@@ -31,7 +31,8 @@
     "q": "^1.1.2",
     "slugify": "^0.1.0",
     "yeoman-generator": "^0.18.3",
-    "yosay": "^1.0.0"
+    "yosay": "^1.0.0",
+    "appbones": "^0.1.2"
   },
   "devDependencies": {}
 }

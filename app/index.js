@@ -21,12 +21,10 @@
     var GruntProjectGenerator,
         Q = require('q'),
         path = require('path'),
-        chalk = require('chalk'),
         yosay = require('yosay'),
-        yaml = require('js-yaml'),
-        assert = require('assert'),
         lodash = require('lodash'),
         slugify = require('slugify'),
+        appbones = require('appbones'),
         generators = require('yeoman-generator');
 
     GruntProjectGenerator = generators.Base.extend({
@@ -37,61 +35,9 @@
         },
 
         initializing: function () {
-
-            // place here private methods
-            this.parseBones = function (name, values) {
-                var used,
-                    src, // folder/file to be written
-                    basename, // file basename
-                    $this = this
-                if (!lodash.isNull(values)) {
-                    values.filter(function (item) {
-                        if (lodash.isString(item)) {
-                            return true;
-                        } else if (lodash.isArray(item)) {
-
-                            item.map(function (file) {
-
-                                used = true;
-                                src = path.join(name, file);
-
-                                /*
-                                if ($this.config.get('conditionnals').hasOwnProperty(basename)) {
-                                    used = $this.config.get('conditionnals')[basename];
-                                }
-                                */
-
-                                if (used) {
-                                    if (file.indexOf('_') === 0) {
-                                        $this.fs.copyTpl(
-                                            $this.templatePath(src),
-                                            $this.destinationPath(path.join(name, file.slice(1))),
-                                            $this.config.getAll()
-                                        );
-                                    } else {
-                                        $this.fs.copy(
-                                            $this.templatePath(src),
-                                            $this.destinationPath(src)
-                                        );
-                                    }
-                                }
-
-                            });
-
-                            return false;
-                        } else if (lodash.isObject(item)) {
-                            Object.keys(item).map(function (key) {
-                                src = path.join(name, key);
-                                $this.mkdir(src);
-                                $this.parseBones(src, item[key]);
-                            });
-                        }
-                    }).map(function (item) {
-                        $this.mkdir(path.join(name, item));
-                    });
-                }
-                return true;
-            };
+            // custom templates delimiter
+            this.config.set('rdim', '%>');
+            this.config.set('ldim', '<%=');
         },
 
         prompting: {
@@ -188,13 +134,13 @@
         },
 
         writing: function () {
+
             var $this = this,
-                done = this.async(),
-                file = '../bones.yml',
-                bones = yaml.safeLoad(this.src.read(file, 'utf-8'));
-            Q.delay(500, (function () {
-                $this.parseBones('', bones['root']);
-            }())).then(done);
+                data = this.config.getAll(),
+                bones = path.resolve(this.templatePath(), '../bones.yml');
+            appbones.sourcePath(this.templatePath());
+            appbones.destinationPath(this.destinationPath());
+            appbones(bones, data);
         },
 
         install: function () {
