@@ -1,7 +1,7 @@
 {
   "name": "generator-gruntproject",
-  "version": "0.0.0",
-  "description": "Generate a simple project with Grunt Tasks",
+  "version": "0.0.1",
+  "description": "Generate a basic project ready for Grunt",
   "main": "index.js",
   "scripts": {
     "test": "node tests"
@@ -34,5 +34,9 @@
     "yosay": "^1.0.0",
     "appbones": "^0.1.2"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-bump": "0.0.16",
+    "load-grunt-config": "^0.16.0"
+  }
 }
