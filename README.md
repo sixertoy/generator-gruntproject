@@ -33,9 +33,9 @@ yo gruntproject
 * [**grunt jasmine-node**](https://github.com/sixertoy/grunt-jasmine-node)
 * [**grunt jshint**](https://www.npmjs.com/package/grunt-contrib-jshint)
 * [**grunt markdown**](https://www.npmjs.com/package/grunt-markdown)
-* [**load-grunt-config](https://www.npmjs.com/package/load-grunt-config)
+* [**load-grunt-config**](https://www.npmjs.com/package/load-grunt-config)
 
-### Folders & Files
+### Folders & Files generated
 
 * .editorconfig
 * .gitattributes
@@ -62,3 +62,6 @@ yo gruntproject
     * spec.tpl
 
 [grunt-img]: https://cdn.gruntjs.com/builtwith.png
+
+[license-img]: http://img.shields.io/badge/license-MIT-blue.svg?style=flat-square
+[license-url]: LICENSE-MIT
