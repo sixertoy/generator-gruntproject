@@ -10,6 +10,6 @@ after_success:
 deploy:
   provider: npm
   email: "<%= author.email %>"
-  api_key: "bWFsYXMzNDojaGVsbG8kd29ybGQj"
+  api_key: "<%= travis.apikey %>"
   on:
     branch: master
