@@ -1,7 +1,7 @@
 {
   "name": "generator-gruntproject",
   "version": "0.0.2",
-  "description": "Generate a basic project ready for Grunt",
+  "description": "Yeoman generator for a Grunt ready project",
   "main": "index.js",
   "scripts": {
     "test": "node tests"

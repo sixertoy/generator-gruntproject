@@ -2,7 +2,7 @@
 
 [![MIT License][license-img]][license-url]
 
-> Generate a basic project ready for Grunt
+> Yeoman generator for a Grunt ready project
 
 ## Install
 
