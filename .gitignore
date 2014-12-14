@@ -204,4 +204,4 @@ dist/
 
 
 ### Generator templates files ###
-!app/templates/**/*.*
+!app/templates/
