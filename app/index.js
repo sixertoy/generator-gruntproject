@@ -136,15 +136,20 @@
         writing: function () {
 
             var $this = this,
+                done = this.async(),
                 data = this.config.getAll(),
                 bones = path.resolve(this.templatePath(), '../bones.yml');
             appbones.sourcePath(this.templatePath());
             appbones.destinationPath(this.destinationPath());
-            appbones(bones, data);
+            Q.delay((function (){
+                appbones(bones, data);
+            }()), 1500).then((function(){
+                done();
+            }()));
         },
 
         install: function () {
-
+            this.npmInstall();
         },
 
         end: function () {
