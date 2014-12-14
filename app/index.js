@@ -80,7 +80,7 @@
                 prompts.push({
                     type: 'input',
                     name: 'projectrepository',
-                    message: 'Project repository',
+                    message: 'Project repository url',
                     default: function (values) {
                         return 'https://github.com' + '/' + values.username + '/' + values.projectname;
                     }

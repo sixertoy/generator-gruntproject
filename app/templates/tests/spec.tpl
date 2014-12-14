@@ -1,6 +1,6 @@
 /*jshint unused: false */
 /*jslint indent: 4 */
-/*global jasmine, process, require, define, describe, it, xit, expect, beforeEach, afterEach, afterLast, Class */
+/*global jasmine, process, require, define, describe, it, xit, expect, beforeEach, afterEach, afterLast */
 (function () {
 
     'use strict';
