@@ -7,7 +7,7 @@
 ## Install
 
 ```bash
-npm install -g git://github.com/sixertoy/generator-gruntproject
+npm install -g generator-gruntproject
 ```
 
 ## Usage
