@@ -143,7 +143,6 @@
         },
 
         writing: function () {
-
             var $this = this,
                 done = this.async(),
                 data = this.config.getAll(),
