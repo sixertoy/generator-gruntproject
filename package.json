@@ -24,9 +24,7 @@
   },
   "homepage": "https://github.com/sixertoy/generator-gruntproject",
   "dependencies": {
-    "assert": "^1.1.2",
     "chalk": "^0.5.1",
-    "js-yaml": "^3.2.3",
     "lodash": "^2.4.1",
     "q": "^1.1.2",
     "slugify": "^0.1.0",
