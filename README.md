@@ -42,7 +42,7 @@ yo gruntproject
 
 [grunt-img]: https://cdn.gruntjs.com/builtwith.png
 
-[screenshot]: https://github.com/sixertoy/generator-gruntproject/master/screenshot.jpg
+[screenshot]: https://github.com/sixertoy/generator-gruntproject/blob/master/screenshot.jpg
 
 [license-img]: http://img.shields.io/badge/license-MIT-blue.svg?style=flat-square
 [license-url]: LICENSE-MIT
