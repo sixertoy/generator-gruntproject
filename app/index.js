@@ -31,13 +31,22 @@
 
         constructor: function () {
             generators.Base.apply(this, arguments);
-            this.log(yosay('Hello sir, welcome to the awesome grunt project generator!'));
+
+            this.option('skip-install', {
+                desc: 'Skip the bower and node installations',
+                defaults: false
+            });
+
         },
 
         initializing: function () {
             // custom templates delimiter
             this.config.set('rdim', '%>');
             this.config.set('ldim', '<%=');
+            if (!this.options['skip-install']) {
+                this.log(yosay('Hello sir, welcome to the awesome grunt project generator!'));
+            }
+
         },
 
         prompting: {
@@ -141,15 +150,17 @@
                 bones = path.resolve(this.templatePath(), '../bones.yml');
             appbones.sourcePath(this.templatePath());
             appbones.destinationPath(this.destinationPath());
-            Q.delay((function (){
+            Q.delay((function () {
                 appbones(bones, data);
-            }()), 1500).then((function(){
+            }()), 1500).then((function () {
                 done();
             }()));
         },
 
         install: function () {
-            this.npmInstall();
+            if (!this.options['skip-install']) {
+                this.npmInstall();
+            }
         },
 
         end: function () {

@@ -32,7 +32,7 @@
     "slugify": "^0.1.0",
     "yeoman-generator": "^0.18.3",
     "yosay": "^1.0.0",
-    "appbones": "^0.1.2"
+    "appbones": "^0.1.6"
   },
   "devDependencies": {
     "grunt": "^0.4.5",

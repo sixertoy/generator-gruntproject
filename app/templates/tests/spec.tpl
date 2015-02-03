@@ -9,20 +9,20 @@
         cwd = process.cwd(),
         Helper = require();
 
-    describe('And helper', function () {
+    describe('Helper', function () {
 
         beforeEach(function(){
-            helper = new Helper();
+            // helper = new Helper();
         });
 
-        if('should throw', function(){
+        it('Expect something', function(){
             expect(function(){
                 result = helper.render();
             }).toThrow();
         });
 
         afterEach(function(){
-            helper = null;
+            // helper = null;
         });
 
     });

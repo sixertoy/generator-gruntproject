@@ -7,10 +7,11 @@ root:
         - html
         - [_page.tpl]
     - grunt:
-        - [aliases.yml, bump.js, jasmine_node.js, jshint.js, markdown.js]
+        - [_banner.tpl, aliases.yml, bump.js, jasmine_node.js, jshint.js, markdown.js, watch.js]
     - tests:
         - fixtures
         - expected
         - lib
         - [spec.tpl]
+    - lib:
     - bin:

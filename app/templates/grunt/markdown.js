@@ -10,7 +10,7 @@ module.exports = {
             ext: '.html'
         }],
         options: {
-            template: './docs/.tpl'
+            template: './docs/page.tpl'
         }
     }
 };
