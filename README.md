@@ -37,29 +37,8 @@ yo gruntproject
 
 ### Folders & Files generated
 
-* .editorconfig
-* .gitattributes
-* [.gitignore](https://gist.github.com/e549b0f03494158987ef.git)
-* .jshintrc
-* .travis.yml (optional)
-* Gruntfile.js
-* package.json
-* README.md
-* CHANGELOG.md
-* jasmine-node
-* docs:
-    * src
-    * html
-    * page.tpl
-* grunt:
-    * banner.tpl
-    * aliases.yml (grunt tasks alias)
-    * bump.js
-    * jasmine_node.js
-    * jshint.js
-    * markdown.js
-* tests:
-    * spec.tpl
+[[!screenshot][screenshot]]
+
 
 [grunt-img]: https://cdn.gruntjs.com/builtwith.png
 
