@@ -37,7 +37,7 @@ yo gruntproject
 
 ### Folders & Files generated
 
-[[!screenshot][screenshot]]
+[[screenshot]]
 
 
 [grunt-img]: https://cdn.gruntjs.com/builtwith.png
