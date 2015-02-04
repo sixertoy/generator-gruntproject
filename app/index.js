@@ -24,7 +24,7 @@
         yosay = require('yosay'),
         lodash = require('lodash'),
         slugify = require('slugify'),
-        appbones = require('appbones'),
+        AppBones = require('appbones'),
         generators = require('yeoman-generator');
 
     GruntProjectGenerator = generators.Base.extend({
@@ -146,11 +146,10 @@
             var $this = this,
                 done = this.async(),
                 data = this.config.getAll(),
-                bones = path.resolve(this.templatePath(), '../bones.yml');
-            appbones.sourcePath(this.templatePath());
-            appbones.destinationPath(this.destinationPath());
+                bones = path.resolve(this.templatePath(), '../bones.yml'),
+                appbones = new AppBones(this.templatePath(), this.destinationPath());
             Q.delay((function () {
-                appbones(bones, data);
+                appbones.build(bones, data);
             }()), 1500).then((function () {
                 done();
             }()));
