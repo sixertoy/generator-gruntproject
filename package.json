@@ -30,7 +30,6 @@
     "slugify": "^0.1.0",
     "yeoman-generator": "^0.18.3",
     "yosay": "^1.0.0",
-    "appbones": "^0.2.3",
     "js-yaml": "^3.2.5"
   },
   "devDependencies": {

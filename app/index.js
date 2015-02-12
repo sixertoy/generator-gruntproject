@@ -43,10 +43,7 @@
             // custom templates delimiter
             this.config.set('rdim', '%>');
             this.config.set('ldim', '<%=');
-            if (!this.options['skip-install']) {
-                this.log(yosay('Hello sir, welcome to the awesome grunt project generator!'));
-            }
-
+            this.log(yosay('Hello sir, welcome to the awesome grunt project generator!'));
         },
 
         prompting: {
