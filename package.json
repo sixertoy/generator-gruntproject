@@ -1,6 +1,6 @@
 {
   "name": "generator-gruntproject",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "Yeoman generator for a Grunt ready project",
   "main": "index.js",
   "scripts": {
@@ -24,13 +24,14 @@
   },
   "homepage": "https://github.com/sixertoy/generator-gruntproject",
   "dependencies": {
+    "appbones": "^0.2.5",
     "chalk": "^0.5.1",
+    "js-yaml": "^3.2.5",
     "lodash": "^2.4.1",
     "q": "^1.1.2",
     "slugify": "^0.1.0",
     "yeoman-generator": "^0.18.3",
-    "yosay": "^1.0.0",
-    "js-yaml": "^3.2.5"
+    "yosay": "^1.0.0"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
