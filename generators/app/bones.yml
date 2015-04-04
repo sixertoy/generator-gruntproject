@@ -1,7 +1,7 @@
 ---
 # project folders
 root:
-    - [CHANGELOG.md, _Gruntfile.js, _README.md, jasmine-node, _.editorconfig, _.gitignore, _.gitattributes, _.jshintrc, _package.json, _LICENSE-MIT, _.travis.yml]
+    - [CHANGELOG.md, _Gruntfile.js, _README.md, jasmine-node, _.editorconfig, _.gitignore, _.gitattributes, _.jshintrc, _.csslintrc, _package.json, _LICENSE-MIT, _.travis.yml]
     - docs:
         - src
         - html
