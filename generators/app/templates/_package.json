@@ -29,7 +29,7 @@
         "grunt-bump": "0.0.16",
         "grunt-contrib-jshint": "^0.10.0",
         "grunt-contrib-watch": "^0.6.1",
-        "grunt-jasmine-node": "git://github.com/sixertoy/grunt-jasmine-node",
+        "grunt-jasmine-node-junit": "git://github.com/sixertoy/grunt-jasmine-node-junit",
         "grunt-markdown": "^0.6.1",
         "load-grunt-config": "^0.16.0"
     }
