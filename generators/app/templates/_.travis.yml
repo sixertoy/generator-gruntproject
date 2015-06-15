@@ -1,15 +1,16 @@
 language: node_js
 node_js:
-  - "0.10"
+  - "<%= node.version %>"
 before_install:
-  - npm install -g grunt-cli istanbul
+  - npm install -g grunt-cli istanbul jasmine-node coveralls
 script:
   - npm test --verbose
 after_success:
-  - istanbul cover jasmine-node tests/ --verbose && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
-deploy:
+  - istanbul cover jasmine-node --captureExceptions ./tests/
+  - cat ./coverage/lcov.info | coveralls && rm -rf ./coverage
+<% if(travis.deploy) { %>deploy:
   provider: npm
   email: "<%= author.email %>"
-  api_key: ""
+  api_key: "<%= travis.apikey %>"
   on:
-    branch: master
+    branch: master<% } %>

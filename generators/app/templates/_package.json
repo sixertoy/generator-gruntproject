@@ -1,10 +1,11 @@
 {
     "name": "<%= project.name %>",
-    "version": "0.0.0",
+    "version": "0.1.0",
     "description": "<%= project.description %>",
     "main": "index.js",
     "scripts": {
-        "test": "grunt jasmine_node"
+        "start": "echo \"Error: no start specified\" && exit 1",
+        "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {
         "type": "git",
@@ -23,16 +24,22 @@
     },
     "homepage": "<%= project.repository %>",
     "dependencies": {
-        "class-extend": "^0.1.1"
+        "class-extend": "",
+        "lodash": "",
+        "object-assign": ""
     },
     "devDependencies": {
-        "coveralls": "^2.11.2",
-        "grunt": "^0.4.5",
-        "grunt-bump": "0.0.16",
-        "grunt-contrib-jshint": "^0.10.0",
-        "grunt-contrib-watch": "^0.6.1",
-        "grunt-jasmine-node-junit": "git://github.com/sixertoy/grunt-jasmine-node-junit",
-        "grunt-markdown": "^0.6.1",
-        "load-grunt-config": "^0.16.0"
+        "grunt": "",
+        "grunt-bump": "",
+        "grunt-contrib-connect": "",
+        "grunt-contrib-jshint": "",
+        "grunt-contrib-watch": "",
+        "grunt-coveralls": "",
+        "grunt-jasmine-node-coverage": "",
+        "grunt-jsbeautifier": "",
+        "grunt-markdown": "",
+        "grunt-wrap": "",
+        "load-grunt-config": "",
+        "sinon": ""
     }
 }

@@ -76,7 +76,7 @@
                     type: 'input',
                     name: 'useremail',
                     message: 'Repository user email',
-                    default: this.user.git.email() || 'you@mail.com'
+                    default: this.user.git.email() || 'you.contact@mail.com'
                 });
 
                 // project name
@@ -98,40 +98,42 @@
 
                 prompts.push({
                     type: 'confirm',
-                    name: 'use_travis',
-                    message: 'Would you like to use Travis ?',
+                    name: 'deploy_travis',
+                    message: 'Would you like to NPM deploy with Travis ?',
                     default: false
                 });
 
                 prompts.push({
                     when: function (values) {
-                        return values.use_travis;
+                        return values.deploy_travis;
                     },
                     type: 'input',
                     name: 'travis_apikey',
                     message: 'Travis API key ?',
                     validate: function (value) {
                         return lodash.isEmpty(value.trim()) ? 'Enter your Travis api key' : true;
-                    }
+                    },
+                    default: 'travis_api_key'
                 });
 
                 this.prompt(prompts, function (values) {
+                    var date = new Date();
+                    this.config.set('node', {
+                        version: process.versions.node
+                    });
                     this.config.set('author', {
                         name: values.username,
                         email: values.useremail
                     });
                     this.config.set('project', {
                         name: values.projectname,
+                        year: date.getFullYear(),
                         repository: values.projectrepository,
                         description: values.projectdescription
                     });
-                    if (values.use_travis) {
-                        this.config.set('travis', {
-                            apikey: values.travis_apikey
-                        });
-                    }
-                    this.config.set('conditionnals', {
-                        travis: values.use_travis
+                    this.config.set('travis', {
+                        deploy: values.deploy_travis,
+                        apikey: values.travis_apikey
                     });
                     done();
                 }.bind(this));
