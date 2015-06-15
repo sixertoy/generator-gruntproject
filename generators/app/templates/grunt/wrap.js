@@ -3,7 +3,7 @@
 module.exports = function (grunt, options) {
     'use strict';
     return {
-        basic: {
+        commonjs: {
             expand: true,
             cwd: './src/',
             dest: './amd/',

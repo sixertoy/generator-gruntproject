@@ -15,7 +15,7 @@ root:
         - expected
         - specs
         - [spec.tpl]
-    - amd
+    - app
     - bin
     - build
     - coverage
