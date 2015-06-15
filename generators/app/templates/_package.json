@@ -17,10 +17,10 @@
     "keywords": [
         "grunt"
     ],
-    "author": {
+    "author": [{
         "name": "<%= author.name %>",
         "email": "<%= author.email %>"
-    },
+    }],
     "license": "MIT",
     "bugs": {
         "url": "<%= project.repository %>/issues"

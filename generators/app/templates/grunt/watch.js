@@ -6,12 +6,12 @@ module.exports = {
         livereload: false,
         livereloadOnError: false
     },
-    amd: {
+    compile: {
         files: ['./src/**/*.js'],
-        tasks: ['wrap', 'jshint']
+        tasks: ['wrap:commonjs', 'jshint']
     },
     jasmine: {
-        files: ['./tests/src/*.spec.js', 'src/mvc/**/*.js'],
+        files: ['./tests/specs/**/*.spec.js', 'app/**/*.js'],
         tasks: ['jasmine_node']
     }
 };

@@ -18,5 +18,5 @@ module.exports = {
             savePath: './build/reports/jasmine/'
         }
     },
-    src: ['src/**/*.js']
+    src: ['app/**/*.js']
 };

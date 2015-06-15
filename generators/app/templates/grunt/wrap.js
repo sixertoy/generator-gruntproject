@@ -6,7 +6,7 @@ module.exports = function (grunt, options) {
         commonjs: {
             expand: true,
             cwd: './src/',
-            dest: './amd/',
+            dest: './app/',
             src: ['**/*.js'],
             options: {
                 indent: '\t',
