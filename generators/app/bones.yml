@@ -7,7 +7,7 @@ root:
         - html
         - [_page.tpl]
     - grunt:
-        - [_banner.tpl, aliases.yml, bump.js, connect.js, coveralls.js, jasmine_node.js, jshint.js, markdown.js, watch.js]
+        - [_banner.tpl, aliases.yml, bump.js, connect.js, coveralls.js, jasmine_node.js, jsbeautifier.js, jshint.js, markdown.js, watch.js, wrap.js]
     - public:
     - src:
     - tests:

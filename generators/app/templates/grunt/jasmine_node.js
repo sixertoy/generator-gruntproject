@@ -3,17 +3,20 @@
 module.exports = {
     options: {
         match: '.',
-        forceExit: false,
+        coverage: {},
+        matchAll: false,
+        forceExit: true,
         extensions: 'js',
-        keepRunner: true,
+        showColors: true,
+        specFolders: ['tests'],
         specNameMatcher: 'spec',
-        includeStackTrace: false,
-        jUnit: {
-            report: true,
-            savePath: './build/reports/jasmine/',
+        captureExceptions: true,
+        junitreport: {
+            report: false,
+            consolidate: true,
             useDotNotation: true,
-            consolidate: true
+            savePath: './build/reports/jasmine/'
         }
     },
-    all: ['tests/']
+    src: ['src/**/*.js']
 };

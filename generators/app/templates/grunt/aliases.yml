@@ -1,9 +1,12 @@
 tests:
-  - jshint
   - jasmine_node
-documentation:
+build:
+  - wrap
+  - jsbeautifier
+compile:
   - tests
-  - markdown
+  - build
+  - jshint
 default:
-  - tests
+  - compile
   - watch
