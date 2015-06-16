@@ -4,11 +4,10 @@
     "description": "<%= project.description %>",
     "main": "index.js",
     "scripts": {
-        "preinstall": "git init",
         "clean": "rm -rf node_modules",
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "echo \"Error: no start specified\" && exit 1",
-        "postinstall": "cd .git/hooks && ln -s ../../bin/git/commit-msg.js && mv commit-msg.js commit-msg && cd ../../"
+        "git-init": "git init && cd .git/hooks && ln -s ../../bin/git/commit-msg.js && mv commit-msg.js commit-msg && cd ../../"
     },
     "engines": {
         "node": ">=<%= node.version %>"
