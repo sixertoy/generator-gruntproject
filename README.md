@@ -1,5 +1,6 @@
 # Grunt Project Generator [![Built with Grunt][grunt-img]](http://gruntjs.com/)
-[![MIT License][license-img]][license-url]
+
+[![MIT License][license-img]][license-url] [![NPM version][npm-version-img]][npm-url] [![NPM downloads][npm-downloads-img]][npm-url]
 
 > Yeoman generator for a Grunt ready project
 
@@ -36,9 +37,13 @@ yo gruntproject
 
 ### Folders & Files generated
 
-![Screenshot](https://github.com/sixertoy/generator-gruntproject/blob/master/screenshot.jpg)
+![Screenshot](./screenshot.jpg)
 
 [grunt-img]: https://cdn.gruntjs.com/builtwith.png
-[npm-version]: https://img.shields.io/npm/v/npm.svg?style=flat-square
+
 [license-img]: http://img.shields.io/badge/license-MIT-blue.svg?style=flat-square
 [license-url]: LICENSE-MIT
+
+[npm-url]: https://npmjs.org/package/generator-gruntproject
+[npm-version-img]: http://img.shields.io/npm/v/generator-gruntproject.svg?style=flat-square
+[npm-downloads-img]: http://img.shields.io/npm/dm/generator-gruntproject.svg?style=flat-square
