@@ -1,5 +1,4 @@
 # Grunt Project Generator [![Built with Grunt][grunt-img]](http://gruntjs.com/)
-
 [![MIT License][license-img]][license-url]
 
 > Yeoman generator for a Grunt ready project
@@ -39,8 +38,7 @@ yo gruntproject
 
 ![Screenshot](https://github.com/sixertoy/generator-gruntproject/blob/master/screenshot.jpg)
 
-
 [grunt-img]: https://cdn.gruntjs.com/builtwith.png
-
+[npm-version]: https://img.shields.io/npm/v/npm.svg?style=flat-square
 [license-img]: http://img.shields.io/badge/license-MIT-blue.svg?style=flat-square
 [license-url]: LICENSE-MIT

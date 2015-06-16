@@ -15,7 +15,9 @@ root:
         - expected
         - specs
         - [spec.tpl]
+    - bin:
+      - git:
+        - [commit-msg.js]
     - app
-    - bin
     - build
     - coverage

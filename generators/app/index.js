@@ -33,6 +33,10 @@
         constructor: function () {
             generators.Base.apply(this, arguments);
 
+            this.option('debug', {
+                desc: 'Use debug',
+                defaults: false
+            });
             this.option('skip-install', {
                 desc: 'Skip the bower and node installations',
                 defaults: false
@@ -141,8 +145,11 @@
             }
         },
 
-        configuring: {
-
+        configuring: function(){
+            /*
+            var $this = this,
+                done = this.async();
+                */
         },
 
         writing: function () {
@@ -151,6 +158,7 @@
                 data = this.config.getAll(),
                 bones = path.resolve(this.templatePath(), '../bones.yml'),
                 appbones = new AppBones(this.templatePath(), this.destinationPath());
+            appbones.setDebug(this.options['debug']);
             Q.delay((function () {
                 appbones.build(bones, data);
             }()), 1500).then((function () {
