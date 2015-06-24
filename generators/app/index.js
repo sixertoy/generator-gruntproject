@@ -37,10 +37,6 @@
                 desc: 'Use debug',
                 defaults: false
             });
-            this.option('skip-install', {
-                desc: 'Skip the bower and node installations',
-                defaults: false
-            });
 
         },
 
@@ -48,9 +44,7 @@
             // custom templates delimiter
             this.config.set('rdim', '%>');
             this.config.set('ldim', '<%=');
-            if (!this.options['skip-install']) {
-                this.log(yosay('Hello sir, welcome to the awesome grunt project generator v' + pkg.version));
-            }
+            this.log(yosay('Hello sir, welcome to the awesome grunt project generator v' + pkg.version));
 
         },
 
@@ -120,10 +114,18 @@
                     default: 'travis_api_key'
                 });
 
+                prompts.push({
+                    type: 'confirm',
+                    name: 'skip_install',
+                    message: 'Skip NPM Modules install?',
+                    default: true
+                });
+
                 this.prompt(prompts, function (values) {
                     var date = new Date();
                     this.config.set('node', {
-                        version: process.versions.node
+                        version: process.versions.node,
+                        skipInstall: values.skip_install
                     });
                     this.config.set('author', {
                         name: values.username,
@@ -145,7 +147,7 @@
             }
         },
 
-        configuring: function(){
+        configuring: function () {
             /*
             var $this = this,
                 done = this.async();
@@ -158,7 +160,7 @@
                 data = this.config.getAll(),
                 bones = path.resolve(this.templatePath(), '../bones.yml'),
                 appbones = new AppBones(this.templatePath(), this.destinationPath());
-            appbones.setDebug(this.options['debug']);
+            appbones.setDebug(this.options.debug);
             Q.delay((function () {
                 appbones.build(bones, data);
             }()), 1500).then((function () {
@@ -167,7 +169,7 @@
         },
 
         install: function () {
-            if (!this.options['skip-install']) {
+            if (!this.config.get('node').skipInstall) {
                 this.npmInstall();
             }
         },
