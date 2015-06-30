@@ -1,23 +1,18 @@
 ---
 # project folders
 root:
-    - [CHANGELOG.md, _Gruntfile.js, _README.md, _.editorconfig, _.gitignore, _.gitattributes, _.jshintrc, _.csslintrc, _package.json, _LICENSE-MIT, _.travis.yml, index.js, coveralls.yml]
+    - [CHANGELOG.md, _Gruntfile.js, _README.md, _.editorconfig, _.gitignore, _.gitattributes, _.jshintrc, _.csslintrc, _package.json, _LICENSE-MIT, _.travis.yml, index.js]
     - docs:
         - src
         - html
         - [_page.tpl]
     - grunt:
-        - [_banner.tpl, aliases.yml, bump.js, connect.js, coveralls.js, jasmine_node.js, jsbeautifier.js, jshint.js, markdown.js, watch.js, wrap.js]
-    - public:
+        - [_banner.tpl, aliases.yml, bump.js, connect.js, jasmine_node.js, jshint.js, watch.js]
     - src:
-    - tests:
+    - spec:
         - fixtures
         - expected
-        - specs
+        - src
         - [spec.tpl]
     - bin:
       - git:
-        - [commit-msg.js]
-    - app
-    - build
-    - coverage
