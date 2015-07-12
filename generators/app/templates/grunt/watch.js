@@ -3,15 +3,15 @@
 module.exports = {
     options: {
         cwd: '.',
-        livereload: false,
+        livereload: true,
         livereloadOnError: false
     },
-    compile: {
-        files: ['./src/**/*.js'],
-        tasks: ['wrap:commonjs', 'jshint']
+    documentation: {
+        files: ['./src/docs/**/*.md', './src/docs/meta.json'],
+        tasks: ['build_documentation']
     },
     jasmine: {
-        files: ['./tests/specs/**/*.spec.js', 'app/**/*.js'],
+        files: ['./spec/src/**/*.spec.js', 'src/**/*.js'],
         tasks: ['jasmine_node']
     }
 };

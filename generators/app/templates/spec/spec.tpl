@@ -1,6 +1,6 @@
 /*jshint unused: false */
 /*jslint indent: 4 */
-/*global jasmine, process, require, define, describe, it, xit, expect, beforeEach, afterEach, afterLast */
+/*global jasmine, process, require, define, describe, xdescribe, it, xit, expect, beforeEach, afterEach, afterLast */
 (function () {
 
     'use strict';
@@ -15,10 +15,14 @@
             // helper = new Helper();
         });
 
-        it('Expect something', function(){
-            expect(function(){
-                result = helper.render();
-            }).toThrow();
+        describe('Method', function () {
+
+            it('Expect something', function(){
+                expect(function(){
+                    result = helper.render();
+                }).toThrow();
+            });
+
         });
 
         afterEach(function(){

@@ -1,12 +1,12 @@
-tests:
-  - jasmine_node
+serve:
+  - connect
+build_documentation:
+  - clean:documentation
+  - joli_markdown
 build:
-  - wrap
-  - jsbeautifier
-compile:
-  - tests
-  - build
   - jshint
+  - jasmine_node
+  - build_documentation
 default:
-  - compile
+  - build
   - watch

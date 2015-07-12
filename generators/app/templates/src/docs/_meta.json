@@ -1,0 +1,25 @@
+{
+    "index": {
+        "title": "<%= project.name %>",
+        "base": "index.html",
+        "repoUrl": "<%= project.repository %>",
+        "sections": [
+            {"url": "#install","body": "Install"},
+            {"url": "#usage","body": "Usage"},
+            {"url": "#options","body": "Options"},
+            {"url": "#history","body": "History"},
+            {"url": "#contributing","body": "Contributing"}
+        ],
+        "menu": [
+            {"url": "pages/dummy.html","body": "Dummy"}
+        ]
+    },
+    "all": {
+        "title": "<%= project.name %>",
+        "base": "../index.html",
+        "repoUrl": "<%= project.repository %>",
+        "menu": [
+            {"url": "../index.html","body": "Home"}
+        ]
+    }
+}
