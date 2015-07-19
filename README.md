@@ -24,8 +24,9 @@ yo gruntproject
 * Repository user email (current git user email)
 * Project description (Place your project's description here)
 * Project repository url (https://github.com/user/projectname)
-* Use Travis ? (N)
+* Use Travis to deploy to NPM ? (N)
     * Travis API key
+* Skip NPM install ? (Y)
 
 ### Grunt's packages
 
