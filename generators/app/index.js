@@ -97,7 +97,7 @@
                 prompts.push({
                     type: 'confirm',
                     name: 'deploy_travis',
-                    message: 'Would you like to NPM deploy with Travis ?',
+                    message: 'Deploy to NPM with TRAVIS ?',
                     default: false
                 });
 

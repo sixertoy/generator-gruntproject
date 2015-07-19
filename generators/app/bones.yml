@@ -12,7 +12,5 @@ root:
     - fixtures
     - expected
     - src
-    - [spec.tpl]
   - scripts:
     - [jasmine_node]
-  - build:
