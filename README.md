@@ -7,17 +7,21 @@
 ## Install
 
 ```bash
+npm install -g yo mocha istanbul coveralls
 npm install -g generator-gruntproject
 ```
 
 ## Usage
 
 ```bash
-cd myproject
+mkdir <project_name>
+cd $_
 yo gruntproject
 ```
 
-## Prompts
+## NPM Commands exposed
+
+## Prompts questions
 
 * Project name (current folder name)
 * Repository user name (current git username)
@@ -31,7 +35,6 @@ yo gruntproject
 ### Grunt's packages
 
 * [**grunt bump**](https://www.npmjs.com/package/grunt-bump)
-* [**grunt jasmine-node**](https://github.com/sixertoy/grunt-jasmine-node)
 * [**grunt jshint**](https://www.npmjs.com/package/grunt-contrib-jshint)
 * [**grunt markdown**](https://www.npmjs.com/package/grunt-markdown)
 * [**load-grunt-config**](https://www.npmjs.com/package/load-grunt-config)

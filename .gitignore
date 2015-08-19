@@ -201,7 +201,3 @@ bower_components/
 
 build/
 dist/
-
-
-### Generator templates files ###
-!app/templates/.gitignore
